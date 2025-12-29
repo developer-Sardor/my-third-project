@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework1</title>
+    <title>Homework2</title>
     <link rel="stylesheet" href="stle.css">
 </head>
 <body>
@@ -11,10 +11,10 @@
         <div class="container">
             <form id="todoForm">
                 <div class="input-wrap">
-                    <input type="text" id="taskInput" placeholder="1hours">
+                    <input type="text" id="taskInput">
                 </div>
                 <div class="button-wrap">
-                    <button type="submit">Add</button>
+                    <button id="btn" type="submit">Add</button>
                 </div>
                 <ul id="taskList"></ul>
                 
@@ -23,17 +23,17 @@
             </form>
 
                 <div class="todoInput">
-                    <input type="text" id="taskInput1" placeholder="I will wake up at 8 in the morning">
-                    <button class="button" type="submit">Delete</button><br>
+                    <input type="text" id="taskInput1" placeholder="Monday:Go travelling with friends">
+                    <button class="button" type="submit">Done</button><br>
 
-                    <input type="text" id="taskInput2" placeholder="I will practice html for 1 hour">
-                    <button class="button2 type="submit">Delete</button><br>
+                    <input type="text" id="taskInput2" placeholder="Tuesday:Go football with brothers">
+                    <button class="button2 type="submit">Done</button><br>
 
-                    <input type="text" id="taskInput3" placeholder="I will give time for 2hours css">
-                    <button class="button3" type="submit">Delete</button><br>
+                    <input type="text" id="taskInput3" placeholder="Wednesday:Have a rest at home">
+                    <button class="button3" type="submit">Done</button><br>
 
-                    <input type="text" id="taskInput4" placeholder="Then I will have breakfast">
-                    <button class="button4" type="submit">Delete</button>
+                    <input type="text" id="taskInput4">
+                    <button class="button4" type="submit">Done</button>
                 </div>
         </div>
 
@@ -51,25 +51,25 @@
         let button2 = document.querySelector(".button2")
         let button3 = document.querySelector(".button3")
         let button4 = document.querySelector(".button4")
-
+        let btn = document.getElementById("btn")
         button.addEventListener("click", ()=>{
-             taskInput1.remove()
-             button.remove()
+            button.replaceWith("✔️")
         })
 
         button2.addEventListener("click", ()=>{
-             taskInput2.remove()
-             button2.remove()
+             button2.replaceWith("✔️")
         })
 
         button3.addEventListener("click", ()=>{
-             taskInput3.remove()
-             button3.remove()
+             button3.replaceWith("✔️")
+        })
+        button4.addEventListener("click", ()=>{
+            button4.replaceWith("✔️")
         })
 
-        button4.addEventListener("click", ()=>{
-             taskInput4.remove()
-             button4.remove()
+        btn.addEventListener("click", (event)=>{
+             event.preventDefault()
+             taskInput4.value = taskInput.value
         })
 
 
@@ -92,6 +92,10 @@
             taskInput.value = ""
 
         })
+
+        // bu ham qolganlarigaa o'xshashligi mumkin lekin farqi bunda eng tepada turgan inputga yozilgan qiymat eng oxridagi qiymat iyo'q bo'lgan input o'rniga tushadi.
+        //Maqsad: hafta davomida qilgan ishlarni 3 tasini tuzildi va bitta qoldi usha bittani tepadegi input ichiga 
+        //yozib eng pasidagi inputni to'ldirish!!!
 
     </script>
        
