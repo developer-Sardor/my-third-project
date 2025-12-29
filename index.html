@@ -11,7 +11,7 @@
         <div class="container">
             <form id="todoForm">
                 <div class="input-wrap">
-                    <input type="text" id="taskInput">
+                    <input type="text" id="taskInput" placeholder="1hour">
                 </div>
                 <div class="button-wrap">
                     <button id="btn" type="submit">Add</button>
@@ -23,17 +23,17 @@
             </form>
 
                 <div class="todoInput">
-                    <input type="text" id="taskInput1" placeholder="Monday:Go travelling with friends">
-                    <button class="button" type="submit">Done</button><br>
+                    <input type="text" id="taskInput1" placeholder="I will wake up at 8 in the morning">
+                    <button class="button" type="submit">Delete</button><br>
 
-                    <input type="text" id="taskInput2" placeholder="Tuesday:Go football with brothers">
-                    <button class="button2 type="submit">Done</button><br>
+                    <input type="text" id="taskInput2" placeholder="I will practice html for 1 hour">
+                    <button class="button2 type="submit">Delete</button><br>
 
-                    <input type="text" id="taskInput3" placeholder="Wednesday:Have a rest at home">
-                    <button class="button3" type="submit">Done</button><br>
+                    <input type="text" id="taskInput3" placeholder="I will give time for 2hours css">
+                    <button class="button3" type="submit">Delete</button><br>
 
-                    <input type="text" id="taskInput4">
-                    <button class="button4" type="submit">Done</button>
+                    <input type="text" id="taskInput4" placeholder="Then I will have breakfast">
+                    <button class="button4" type="submit">Delete</button>
                 </div>
         </div>
 
@@ -53,23 +53,22 @@
         let button4 = document.querySelector(".button4")
         let btn = document.getElementById("btn")
         button.addEventListener("click", ()=>{
-            button.replaceWith("✔️")
+            button.remove()
+            taskInput1.remove()
         })
 
         button2.addEventListener("click", ()=>{
-             button2.replaceWith("✔️")
+             button2.remove()
+             taskInput2.remove()
         })
 
         button3.addEventListener("click", ()=>{
-             button3.replaceWith("✔️")
+            button3.remove()
+            taskInput3.remove()
         })
         button4.addEventListener("click", ()=>{
-            button4.replaceWith("✔️")
-        })
-
-        btn.addEventListener("click", (event)=>{
-             event.preventDefault()
-             taskInput4.value = taskInput.value
+            button4.remove()
+            taskInput4.remove()
         })
 
 
@@ -93,9 +92,6 @@
 
         })
 
-        // bu ham qolganlarigaa o'xshashligi mumkin lekin farqi bunda eng tepada turgan inputga yozilgan qiymat eng oxridagi qiymat iyo'q bo'lgan input o'rniga tushadi.
-        //Maqsad: hafta davomida qilgan ishlarni 3 tasini tuzildi va bitta qoldi usha bittani tepadegi input ichiga 
-        //yozib eng pasidagi inputni to'ldirish!!!
 
     </script>
        
