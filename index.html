@@ -3,97 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework2</title>
+    <title>Homework</title>
     <link rel="stylesheet" href="stle.css">
 </head>
 <body>
     <div class="container-wrap">
         <div class="container">
-            <form id="todoForm">
-                <div class="input-wrap">
-                    <input type="text" id="taskInput" placeholder="1hour">
-                </div>
-                <div class="button-wrap">
-                    <button id="btn" type="submit">Add</button>
-                </div>
-                <ul id="taskList"></ul>
-                
-
-
-            </form>
-
-                <div class="todoInput">
-                    <input type="text" id="taskInput1" placeholder="I will wake up at 8 in the morning">
-                    <button class="button" type="submit">Delete</button><br>
-
-                    <input type="text" id="taskInput2" placeholder="I will practice html for 1 hour">
-                    <button class="button2 type="submit">Delete</button><br>
-
-                    <input type="text" id="taskInput3" placeholder="I will give time for 2hours css">
-                    <button class="button3" type="submit">Delete</button><br>
-
-                    <input type="text" id="taskInput4" placeholder="Then I will have breakfast">
-                    <button class="button4" type="submit">Delete</button>
-                </div>
+            <table id="todoTable">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>To Start</th>
+                        <th>In progress</th>
+                        <th>Done</th>
+                    </tr>
+                </thead>  
+                <tbody>
+                    <tr>
+                        <td>Wake up early</td>
+                        <td><button id="btn" type="submit">.</button></td>
+                        <td><button id="btn type="submit">.</button></td>
+                        <td><button id="btn" type="submit">.</button></td>
+                    </tr>
+                    <tr>
+                        <td>Study with concentration</td>
+                        <td><button id="btn" type="submit">.</button></td>
+                        <td><button id="btn" type="submit">.</button></td>
+                        <td><button id="btn" type="submit">.</button></td>
+                    </tr>
+                     <tr>
+                        <td>Exercies in gym regularly</td>
+                        <td><button id="btn" type="submit">.</button></td>
+                        <td><button id="btn" type="submit">.</button></td>
+                        <td><button id="btn" type="submit">.</button></td>
+                    </tr>
+                     <tr>
+                        <td>Study with concentration</td>
+                        <td><button id="btn" type="submit">.</button></td>
+                        <td><button id="btn" type="submit">.</button></td>
+                        <td><button id="btn" type="submit">.</button></td>
+                    </tr>
+                </tbody>                                                                                                                                                                    4
+            </table>
         </div>
-
     </div>
 
+
     <script>
-        let form = document.getElementById("todoForm")
-        let taskInput = document.getElementById("taskInput")
-        let taskList = document.getElementById("taskList")
-        let taskInput1 = document.getElementById("taskInput1")
-        let taskInput2 = document.getElementById("taskInput2")
-        let taskInput3 = document.getElementById("taskInput3")
-        let taskInput4 = document.getElementById("taskInput4")
-        let button = document.querySelector(".button")
-        let button2 = document.querySelector(".button2")
-        let button3 = document.querySelector(".button3")
-        let button4 = document.querySelector(".button4")
-        let btn = document.getElementById("btn")
+        let table = document.getElementById("todoTable")
+        let button = document.getElementById("btn")
+
         button.addEventListener("click", ()=>{
-            button.remove()
-            taskInput1.remove()
+            button.replaceWith("✅")
         })
-
-        button2.addEventListener("click", ()=>{
-             button2.remove()
-             taskInput2.remove()
-        })
-
-        button3.addEventListener("click", ()=>{
-            button3.remove()
-            taskInput3.remove()
-        })
-        button4.addEventListener("click", ()=>{
-            button4.remove()
-            taskInput4.remove()
-        })
-
-
-        taskInput.addEventListener("click", (event)=>{
-            event.preventDefault()
-            taskText = taskInput.value.trim()
-
-            if(taskText === "")return
-            let li = document.createElement("li")
-            li.textContent = taskText
-            let deleteBtn = document.createElement("button")
-            deleteBtn.textContent = "delete"
-            deleteBtn.addEventListener("click", ()=>{
-                li.remove()
-            })
-            
-            li.appendChild(deleteBtn)
-            taskList.appendChild(li)
-
-            taskInput.value = ""
-
-        })
-
-
     </script>
-       
 </body>
 </html>
